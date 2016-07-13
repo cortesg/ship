@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="images/gif" href="http://orig14.deviantart.net/a724/f/2015/059/3/6/left_shark_by_addmedia-d8jwzud.gif">
   <title>SecureApp2</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><%= link_to "HOME", "/" %></li>
+      <li><%= link_to "SIGN UP", new_user_path %></li>
+    </ul>
+  </nav>
 
 <%= yield %>
 
