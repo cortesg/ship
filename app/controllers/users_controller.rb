@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def newboat
+    @boat = Boat.new
+  end
+
+  def createboat
+  end
+
   def edit
   end
 
