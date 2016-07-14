@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
 
   def index 
-    @user = User.find(session[:user_id])
-    @boats = @user.boats.all
   end
 
   def new
@@ -20,6 +18,11 @@ class UsersController < ApplicationController
       # redirect_to :back
       redirect_to "/users/new"
     end
+  end
+
+  def show
+    @user = User.find(session[:user_id])
+    @boats = @user.boats.all
   end
 
   def newboat

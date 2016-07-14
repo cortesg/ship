@@ -1,13 +1,6 @@
 <h1>INDEX</h1>
 
 <!-- if logged in, should contain all boats and maybe their jobs -->
-<% if session[:user_id] == @user.id %>    
-	<% @boats.each do |b| %>
-		<p>Boat: <%= b.name %></p>
-		<p>Capacity: <%= b.capacity %></p>
-		<p>Location: <%= b.location %></p>
-	<% end %>
-<% end %>
 
 
 
