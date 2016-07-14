@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
+    
+    # @user = User.find(session[:user_id])
+    # @boat = Boat.find(params[:id])
   end
 
   def new
