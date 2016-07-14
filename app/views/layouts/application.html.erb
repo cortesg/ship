@@ -13,6 +13,7 @@
       <% if session[:user_id] %>
       <li><a href="/">HOME</a></li>
       <li><a href="/log-out">LOG OUT</a></li>
+      <!-- link to create a boat -->
       <% else %>
       <li><%= link_to "HOME", "/" %></li>
       <li><%= link_to "SIGN UP", new_user_path %></li>
