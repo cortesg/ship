@@ -1,3 +1,9 @@
 <h1>INDEX</h1>
 
-<!-- if logged in, should contain all boats and maybe their jobs -->
+<div id="seamanBox">
+  <% @users.each do |user| %>
+      <div class="userBox"><%= user.email %></div>
+      <div class="boatBox"><%= user.boats %><br>
+      </div><br>
+  <% end %>
+</div>
