@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  def index
-    
-    # @user = User.find(session[:user_id])
-    # @boat = Boat.find(params[:id])
+  def index 
+    @user = User.find(session[:user_id])
+    @boats = @user.boats.all
   end
 
   def new
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def newboat
-    @boat = Boat.new
   end
 
   def createboat
