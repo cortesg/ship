@@ -13,4 +13,14 @@ class User < ActiveRecord::Base
 		end
 	end
 
+  def assign_boat
+    create_table :users do |t|
+      t.string :email
+    end
+ 
+    create_table :boats do |t|
+      t.belongs_to :user, index: true
+    end
+  end
+
 end
