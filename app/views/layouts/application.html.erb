@@ -10,11 +10,20 @@
 <body>
   <nav>
     <ul>
+      <% if session[:user_id] %>
+      <li><a href="/">HOME</a></li>
+      <li><a href="/log-out">LOG OUT</a></li>
+      <!-- link to create a boat -->
+      <% else %>
       <li><%= link_to "HOME", "/" %></li>
       <li><%= link_to "SIGN UP", new_user_path %></li>
+      <li><a href="/log-in">LOG IN</a></li>
+      <% end %>
     </ul>
   </nav>
-
+  <%= flash[:notice] if flash[:notice] %>
+  <%= flash[:error] if flash[:error] %>
+  <%= flash[:alert] if flash[:alert] %>
 <%= yield %>
 
 </body>

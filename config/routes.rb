@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   # get 'users/post'
 
+  get "/log-in" => "sessions#new"
+  post "/log-in" => "sessions#create"
+  get "/log-out" => "sessions#destroy", as: :log_out
+
   root "users#index"
   resources :users
+  resources :sessions
 end
