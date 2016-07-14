@@ -10,7 +10,13 @@ class BoatsController < ApplicationController
     @user = User.find(session[:user_id])
     # define comment with the params we created
     @boat = @user.boats.create(boat_params)
-    redirect_to "/"
+    if @user.save
+      flash[:notice] = "yar you made a boat matey!"
+      redirect_to "/"
+    else
+      flash[:alert] = "There was a problem creating your boat. Please try again matey."
+      redirect_to "/boats/new"
+    end
   end
 
   def show
