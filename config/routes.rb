@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'jobs/new'
+
+  get 'jobs/create'
+
+  get 'jobs/edit'
+
+  get 'jobs/destroy'
+
   # get 'boats/index'
 
   # get 'boats/new'
@@ -34,5 +42,7 @@ Rails.application.routes.draw do
   root "users#index"
   resources :users
   resources :sessions
-  resources :boats
+  resources :boats do 
+    resources :jobs
+  end
 end
