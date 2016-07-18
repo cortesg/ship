@@ -1,5 +1,7 @@
+<h1>Your Boats</h1>
+
 <% @boats.each do |b| %>
-		<p>Boat: <%= b.name %></p>
+		<p>Boat: <%= link_to b.name, b %> </p>
 		<p>Capacity: <%= b.capacity %></p>
 		<p>Location: <%= b.location %></p>
 <% end %>
