@@ -4,4 +4,6 @@
 		<p>Boat: <%= link_to b.name, b %> </p>
 		<p>Capacity: <%= b.capacity %></p>
 		<p>Location: <%= b.location %></p>
+		<%= image_tag b.avatar.url(:medium) %>
 <% end %>
+
