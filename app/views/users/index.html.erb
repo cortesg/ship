@@ -1,6 +1,8 @@
-<h1>INDEX</h1>
+<h1>All Boats</h1>
 
-<!-- if logged in, should contain all boats and maybe their jobs -->
-
-
+<% @boats.each do |b| %>
+		<p>Boat: <%= link_to b.name, b %> </p>
+		<p>Capacity: <%= b.capacity %></p>
+		<p>Location: <%= b.location %></p>
+<% end %>
 

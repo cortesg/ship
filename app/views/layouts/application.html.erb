@@ -12,7 +12,7 @@
     <ul>
       <% if session[:user_id] %>
       <li><a href="/">HOME</a></li>
-      <li><a href="/users/show">ALL BOATS</a></li>
+      <li><a href="/users/show">YOUR BOATS</a></li>
       <li><%= link_to "CREATE NEW BOAT", new_boat_path %></li>
       <li><a href="/log-out">LOG OUT</a></li>
       <% else %>
