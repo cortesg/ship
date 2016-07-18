@@ -1,0 +1,10 @@
+<%= form_for([@boat, @boat.jobs.build]) do |f| %>
+		<p>Name: <%= f.text_field :name %></p>
+		<p>Containers Needed: <%= f.text_field :container %></p>
+		<p>Cargo Description: <%= f.text_area :cargo %></p>
+		<p>Origin: <%= f.select(:origin, options_for_select([["NYC","NYC"], ["LA", "LA"], ["Seattle", "Seattle"]]),{include_blank:true})%></p>
+		<p>Cost: <%= f.text_field :cost %></p>
+		<p>Destination: <%= f.select(:destination, options_for_select([["NYC","NYC"], ["LA", "LA"], ["Seattle", "Seattle"]]),{include_blank:true})%></p>
+		<%= f.hidden_field :user_id, :value => User.find(session[:user_id]) %>
+		<p><%= f.submit %></p>	
+<% end %>
