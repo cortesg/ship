@@ -1,8 +1,12 @@
-<h1>All Boats</h1>
+<% if session[:user_id] %>
+	<h1>All Boats</h1>
+	<% @boats.each do |b| %>
+			<p>Boat: <%= link_to b.name, b %> </p>
+			<p>Capacity: <%= b.capacity %></p>
+			<p>Location: <%= b.location %></p>
+	<% end %>
+<% else %> 
+	<h1>Ahoy you sailor, sign in or up ye matey</h1>
 
-<% @boats.each do |b| %>
-		<p>Boat: <%= link_to b.name, b %> </p>
-		<p>Capacity: <%= b.capacity %></p>
-		<p>Location: <%= b.location %></p>
 <% end %>
 
