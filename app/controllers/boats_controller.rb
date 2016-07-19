@@ -20,6 +20,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @boat = Boat.find(params[:id])
   end
 
   def edit
@@ -33,7 +34,7 @@ class BoatsController < ApplicationController
 
   private 
     def boat_params
-      params.require(:boat).permit(:name, :capacity, :location)
+      params.require(:boat).permit(:name, :capacity, :location, :avatar)
     end
 end
 

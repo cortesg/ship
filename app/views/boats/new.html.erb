@@ -8,5 +8,10 @@
 <%=f.text_field :capacity %>
 <%=f.label :location %>
 <%=f.select(:location, options_for_select([["NYC","NYC"], ["LA", "LA"]]),{include_blank:true})%>
+<%=f.file_field :avatar %>
 <%=f.submit "Create Boat" %>
 <%end%>
+
+<%#= form_for @boat, url: boats_path, html: { multipart: true } do |form| %>  
+<%#= form.file_field :avatar %>
+<%# end %>

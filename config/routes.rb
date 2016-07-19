@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'jobs/new'
+
+  get 'jobs/create'
+
+  get 'jobs/edit'
+
+  get 'jobs/destroy'
+
   # get 'boats/index'
 
   # get 'boats/new'
@@ -35,6 +43,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   resources :boats do
+    resources :jobs
     member do
       get :following, :followers
     end
