@@ -20,7 +20,9 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @boat = Boat.find(params[:id])
+    @follow = Follow.new
   end
 
   def edit

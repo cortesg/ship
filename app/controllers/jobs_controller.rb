@@ -26,4 +26,3 @@ class JobsController < ApplicationController
 	end
 end
 
-:user_id

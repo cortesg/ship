@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :follows
+
   get 'jobs/new'
 
   get 'jobs/create'
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'jobs/destroy'
 
+  get '/follow/:id'=>'follows#create', as: 'follow_create' #as is the helper path
   # get 'boats/index'
 
   # get 'boats/new'
@@ -40,6 +43,7 @@ Rails.application.routes.draw do
   get "/log-out" => "sessions#destroy", as: :log_out
 
   root "users#index"
+  
   resources :users
   resources :sessions
   resources :boats do 
