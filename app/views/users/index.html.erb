@@ -2,6 +2,8 @@
 
 <% @boats.each do |b| %>
 		<p>Boat: <%= link_to b.name, b %> </p>
+    
+    <p><% render "users/followbutton" %></p>
 		<p>Capacity: <%= b.capacity %></p>
 		<p>Location: <%= b.location %></p>
 <% end %>

@@ -34,5 +34,9 @@ Rails.application.routes.draw do
   root "users#index"
   resources :users
   resources :sessions
-  resources :boats
+  resources :boats do
+    member do
+      get :following, :followers
+    end
+  end
 end

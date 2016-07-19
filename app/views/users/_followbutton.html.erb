@@ -1,0 +1,17 @@
+<% if current_boat.id != boat.id %>
+  <div class="col">
+    <div class="panel">
+      <% if current_boat.following?(boat) %>
+        <%= form_for(current_boat.active_relataionships.build) do |f| %>
+          <div><%= hidden_field_tag :followed_id, boat.id %> </div>
+          <%= f.submit "Follow", class: "button" %>
+        <% end %>
+      <% else  %>
+        <%= form_for(current_boat.active_relataionships.find_by(followed_id: boat.id),
+          html: {method: :delete}) do |f| %>
+           <%= f.submit "Unfollow", class: "button" %>
+        <% end %>
+     <% end %>
+    </div>
+  </div>
+<% end %>
