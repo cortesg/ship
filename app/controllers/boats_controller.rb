@@ -23,15 +23,20 @@ class BoatsController < ApplicationController
     @user = current_user
     @boat = Boat.find(params[:id])
     @follow = Follow.new
+    @following = Follow.where(:user_id => current_user.id, :boat_id => @boat.id).first
   end
 
   def edit
   end
 
   def delete
+    @follow=Follow.where(user_id:params[:user_id], boat_id:params[:boat_id]).first
+    @follow.destroy
   end
 
   def destroy
+    @follow=Follow.where(user_id:params[:user_id], boat_id:params[:boat_id]).first
+    @follow.destroy
   end
 
   private 

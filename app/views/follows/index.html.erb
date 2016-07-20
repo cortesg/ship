@@ -1,3 +1,5 @@
-<% @follows.each do |f| %>
-	<%= f.boat.name %>
-<% end%>
+
+
+	<% @follows.each do |f| %>
+		<%= link_to f.boat.name, f.boat %>
+	<% end%>

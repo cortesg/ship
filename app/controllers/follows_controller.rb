@@ -1,35 +1,30 @@
 class FollowsController < ApplicationController
 	def index
 		@follows = Follow.all
-		
 	end
 
   def create
-  		@user = current_user
-		@boat = Boat.find(params[:id])
-		@follow = Follow.new(user_id: current_user.id, boat_id: @boat.id)
-		flash[:notice] = 'Following.' if @follow.save
-		respond_to do |format|
-      		format.js 
-      		      	end
+	@user = current_user
+	@boat = Boat.find(params[:id])
+	@boat_id = params[:boat_id]
+	@follow = Follow.new(user_id: current_user.id, boat_id: @boat.id)
+	flash[:notice] = 'Following.' if @follow.save
+	respond_to do |format|
+  		format.js 
+  	end
   end
 
   def destroy
-  # 		@user = current_user
-		# @boat = Boat.find(params[:id])
-		# @unfollow = Follow.find_by(user_id: @user.id, boat_id: @boat.id)
-		# @unfollow.destroy
-		# redirect_to :back
-		@follow=Follow.where(user_id:params[:user_id], boat_id:params[:boat_id]).first
-
-		@follow.destroy
+	@user = current_user
+	@follow=Follow.where(user_id:params[:user_id], boat_id:params[:boat_id]).first
+	@follow.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Follow was successfully destroyed.' }
-  end
+      	format.js 
+  	end
   end
 
   def follow_params
-		params.require(:follow).permit(:user_id, :boat_id)
+	params.require(:follow).permit(:user_id, :boat_id)
   end
 end
 

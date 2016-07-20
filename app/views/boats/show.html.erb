@@ -10,6 +10,10 @@
 
 
 <h2>Add jobs</h2>
-		<%= render "jobs/form" %>
+	<%= render "jobs/form" %>
 
-<%= link_to "Follow", follow_create_path(@boat) , remote: true%>
+<% if !@following %>
+	<p id="pop"><%= link_to "Follow", follow_create_path(@boat) , remote: true %></p>
+<%else%>
+	<%= link_to 'Unfollow Boat', follow_path(@boat), method: :delete, remote: true %>
+<%end%>

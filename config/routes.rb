@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get 'jobs/destroy'
 
-  get '/follow/:id'=>'follows#create', as: 'follow_create' #as is the helper path
+  get '/follow/:id'=>'follows#create', as: 'follow_create'
+  get '/follow/:id'=>'follows#destroy', as: 'follow_destroy'
+   #as is the helper path
   # get 'boats/index'
 
   # get 'boats/new'
