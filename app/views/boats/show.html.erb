@@ -15,5 +15,5 @@
 <% if !@following %>
 	<p id="pop"><%= link_to "Follow", follow_create_path(@boat) , remote: true %></p>
 <%else%>
-	<%= link_to 'Unfollow Boat', follow_path(@boat), method: :delete, remote: true %>
+	<p id="pop2"><%= link_to 'Unfollow Boat', follow_path(@boat.id), method: :delete, remote: true %></p>
 <%end%>

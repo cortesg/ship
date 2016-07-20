@@ -16,7 +16,7 @@ class FollowsController < ApplicationController
 
   def destroy
 	@user = current_user
-	@follow=Follow.where(user_id:params[:user_id], boat_id:params[:boat_id]).first
+	@follow=Follow.where(user_id: current_user.id, boat_id:params[:id]).first
 	@follow.destroy
     respond_to do |format|
       	format.js 
